@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VEW Disposable | Tissue Paper & Disposable Essentials</title>
+  <meta name="description" content="VEW Disposable supplies tissue paper, napkins and disposable hygiene products for homes, offices, hotels, cafés, restaurants and events." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17211c;
+      background: #fbfaf6;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1120px, 92%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 250, 246, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e7e1d5;
+    }
+    .nav {
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #194d33;
+    }
+    .logo span { color: #b68b46; }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #314036;
+    }
+    .nav-links a:hover { color: #b68b46; }
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      background: #194d33;
+      color: #fff;
+      font-weight: 700;
+      border: 1px solid #194d33;
+      transition: 0.25s ease;
+    }
+    .btn:hover { background: #0f3322; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: #194d33;
+      border: 1px solid #194d33;
+    }
+    .btn-outline:hover { background: #194d33; color: #fff; }
+
+    .hero {
+      padding: 92px 0 70px;
+      background:
+        radial-gradient(circle at top right, rgba(182, 139, 70, 0.22), transparent 34%),
+        linear-gradient(135deg, #fbfaf6 0%, #eef3ea 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 52px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: #b68b46;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 1.05;
+      color: #123624;
+      margin-bottom: 22px;
+      letter-spacing: -1.5px;
+    }
+    .hero p {
+      font-size: 19px;
+      color: #4a5a50;
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-card {
+      background: #fff;
+      border-radius: 28px;
+      padding: 14px;
+      box-shadow: 0 24px 60px rgba(18, 54, 36, 0.12);
+      border: 1px solid #efe8dc;
+    }
+    .hero-card img {
+      border-radius: 22px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    section { padding: 82px 0; }
+    .section-title { max-width: 760px; margin-bottom: 42px; }
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.12;
+      color: #123624;
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+    .section-title p { color: #5c6a60; font-size: 17px; }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ece5da;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(18, 54, 36, 0.06);
+    }
+    .card-body { padding: 26px; }
+    .card img.product-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      background: #eee;
+    }
+    .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #edf4ef;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+    .card h3 { color: #163d2a; font-size: 21px; margin-bottom: 10px; }
+    .card p, .card li { color: #5a675f; font-size: 15.5px; }
+    .card ul { padding-left: 18px; margin-top: 12px; }
+
+    .about {
+      background: #133824;
+      color: #fff;
+    }
+    .about .section-title h2, .about h3 { color: #fff; }
+    .about .section-title p, .about p, .about li { color: #d6ded8; }
+    .about .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: none;
+      padding: 28px;
+    }
+
+    .industries {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+    .pill {
+      background: #fff;
+      border: 1px solid #ece5da;
+      border-radius: 999px;
+      padding: 14px 16px;
+      text-align: center;
+      font-weight: 700;
+      color: #314036;
+      box-shadow: 0 10px 24px rgba(18, 54, 36, 0.05);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 18px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid #ece5da;
+      box-shadow: 0 12px 36px rgba(18, 54, 36, 0.06);
+    }
+    .gallery img.tall { height: 538px; grid-row: span 2; }
+    .gallery img.wide { grid-column: span 2; }
+
+    .cta {
+      background: linear-gradient(135deg, #194d33, #102f20);
+      color: #fff;
+      border-radius: 32px;
+      padding: 52px;
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: center;
+    }
+    .cta h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .cta p { color: #dbe5dd; max-width: 660px; }
+    .cta .btn {
+      background: #fff;
+      color: #194d33;
+      border-color: #fff;
+      white-space: nowrap;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 26px;
+      align-items: start;
+    }
+    form { display: grid; gap: 14px; }
+    input, textarea, select {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid #ddd6cc;
+      font: inherit;
+      background: #fff;
+      color: #17211c;
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .contact-detail {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+      color: #314036;
+    }
+    .contact-detail strong { color: #123624; }
+
+    footer {
+      background: #0f281b;
+      color: #cbd5ce;
+      padding: 34px 0;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .footer-content strong { color: #fff; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .industries { grid-template-columns: repeat(3, 1fr); }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .gallery img.tall { height: 300px; grid-row: auto; }
+      .gallery img.wide { grid-column: auto; }
+      .cta { flex-direction: column; align-items: flex-start; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 620px) {
+      .grid-3, .industries, .gallery { grid-template-columns: 1fr; }
+      .hero { padding-top: 64px; }
+      .hero-card, .cta { padding: 18px; }
+      .cta { padding: 30px; }
+      .card img.product-img { height: 220px; }
+      .gallery img, .gallery img.tall { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">VEW<span>.</span></a>
+      <nav class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#industries">Who We Serve</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="https://wa.me/919525605961" target="_blank">WhatsApp Us</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Disposable Hygiene Essentials</div>
+          <h1>Reliable tissue paper and disposable products for everyday use.</h1>
+          <p>VEW Disposable supplies clean, practical and affordable tissue paper products for homes, offices, hotels, cafés, restaurants, institutions and events.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn">View Products</a>
+            <a href="#contact" class="btn btn-outline">Request Quote</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="images/hero-collage.png" alt="VEW Disposable product collection">
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Products for hygiene, service and convenience.</h2>
+          <p>Choose from daily-use tissue and disposable essentials for personal, business and bulk requirements.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <img class="product-img" src="images/product-range.jpg" alt="Tissue paper packs">
+            <div class="card-body">
+              <div class="icon">🧻</div>
+              <h3>Tissue Paper</h3>
+              <p>Soft and reliable tissue products suitable for homes, offices, hotels and commercial spaces.</p>
+              <ul>
+                <li>Regular tissue packs</li>
+                <li>Bulk supply options</li>
+                <li>Custom pack quantities</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <img class="product-img" src="images/napkin-pack.jpg" alt="Paper napkin pack">
+            <div class="card-body">
+              <div class="icon">🍽️</div>
+              <h3>Paper Napkins</h3>
+              <p>Clean and convenient napkins for restaurants, cafés, catering services and daily use.</p>
+              <ul>
+                <li>Single-use napkins</li>
+                <li>Food-service friendly</li>
+                <li>Multiple pack options</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <img class="product-img" src="images/joy-bulk.jpg" alt="Bulk tissue paper packs">
+            <div class="card-body">
+              <div class="icon">📦</div>
+              <h3>Bulk Orders</h3>
+              <p>Regular supply support for retailers, distributors and businesses that need dependable stock.</p>
+              <ul>
+                <li>Wholesale supply</li>
+                <li>Retail-ready packing</li>
+                <li>Consistent availability</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <img class="product-img" src="images/blue-napkin-stack.jpg" alt="Blue printed napkins">
+            <div class="card-body">
+              <div class="icon">🏨</div>
+              <h3>Hospitality Supplies</h3>
+              <p>Disposable essentials for hotels, guest houses, banquets and service counters.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="product-img" src="images/orange-napkin-stack.jpg" alt="Orange printed napkins">
+            <div class="card-body">
+              <div class="icon">🧼</div>
+              <h3>Printed Napkins</h3>
+              <p>Attractive printed napkin options suitable for everyday usage, gifting packs and dining setups.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="product-img" src="images/product-range.jpg" alt="Tissue packing process">
+            <div class="card-body">
+              <div class="icon">✅</div>
+              <h3>Practical & Hygienic</h3>
+              <p>Simple, clean and functional products designed for everyday hygiene requirements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>Built for everyday hygiene needs.</h2>
+          <p>VEW Disposable focuses on dependable disposable products that businesses and households can use without complications.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Consistent Supply</h3>
+            <p>Suitable for customers who need regular tissue and disposable product supply instead of one-time purchases.</p>
+          </div>
+          <div class="card">
+            <h3>Business Friendly</h3>
+            <p>Ideal for offices, cafés, restaurants, hotels, institutions, events and local distributors.</p>
+          </div>
+          <div class="card">
+            <h3>Simple Ordering</h3>
+            <p>Customers can enquire directly through call, WhatsApp or the contact form.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries">
+      <div class="container">
+        <div class="section-title">
+          <h2>Who we serve</h2>
+          <p>Disposable products are not glamorous, but they are necessary. VEW Disposable makes buying simple and dependable.</p>
+        </div>
+        <div class="industries">
+          <div class="pill">Homes</div>
+          <div class="pill">Offices</div>
+          <div class="pill">Hotels</div>
+          <div class="pill">Restaurants</div>
+          <div class="pill">Cafés</div>
+          <div class="pill">Events</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Product Gallery</h2>
+          <p>Real product and packing visuals for quick customer confidence.</p>
+        </div>
+        <div class="gallery">
+          <img class="tall" src="images/hero-collage.png" alt="Professional VEW product collage">
+          <img src="images/product-range.jpg" alt="Product range">
+          <img src="images/blue-napkin-stack.jpg" alt="Printed blue napkin stack">
+          <img src="images/orange-napkin-stack.jpg" alt="Printed orange napkin stack">
+          <img src="images/joy-bulk.jpg" alt="Bulk packed tissue products">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Need tissue paper or disposable supplies in bulk?</h2>
+            <p>Share your requirement and get product details, pack options and pricing support.</p>
+          </div>
+          <a href="#contact" class="btn">Get Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="section-title">
+          <h2>Contact VEW Disposable</h2>
+          <p>For product details, bulk orders, dealership/distribution enquiries or regular supply requirements, contact us directly.</p>
+          <div class="contact-detail">
+            <p><strong>Phone / WhatsApp:</strong> +91 95256 05961</p>
+            <p><strong>Email:</strong> info@vewdisposable.in</p>
+            <p><strong>Website:</strong> vewdisposable.in</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <form action="mailto:info@vewdisposable.in" method="POST" enctype="text/plain">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input type="tel" name="phone" placeholder="Phone Number" required />
+              <input type="email" name="email" placeholder="Email Address" />
+              <select name="requirement" required>
+                <option value="">Select Requirement</option>
+                <option>Tissue Paper</option>
+                <option>Paper Napkins</option>
+                <option>Printed Napkins</option>
+                <option>Bulk Order</option>
+                <option>Other Disposable Items</option>
+              </select>
+              <textarea name="message" placeholder="Tell us your quantity, location and requirement"></textarea>
+              <button class="btn" type="submit">Send Enquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p><strong>VEW Disposable</strong> — Tissue Paper & Disposable Essentials</p>
+      <p>© 2026 VEW Disposable. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
